@@ -83,14 +83,14 @@ const CustomCalendar: React.FC = () => {
             <ContextMenuTrigger>
               <div
                 key={day.toString()}
-                className={`p-2 text-center cursor-pointer transition-colors
-                  ${!isSameMonth(day, monthStart) ? "text-zinc-700" : "text-zinc-300"}
+                className={`p-2 text-center cursor-pointer transition-colors border-2
+                  ${!isSameMonth(day, monthStart) ? "text-zinc-700 border-transparent" : "text-zinc-300 border-transparent"}
                   ${
                     selectedDate && isSameDay(day, selectedDate)
-                      ? "bg-zinc-400 text-black rounded-full hover:bg-zinc-500"
+                      ? "bg-zinc-400 text-black rounded-full hover:bg-zinc-500 border-transparent"
                       : isToday(day)
-                      ? "border-2 border-zinc-400 text-zinc-400 rounded-full hover:bg-zinc-800"
-                      : "hover:bg-zinc-800 hover:text-zinc-100 rounded-full"
+                      ? "border-black text-zinc-400 rounded-full hover:bg-zinc-800"
+                      : "hover:bg-zinc-800 hover:text-zinc-100 rounded-full border-transparent"
                   }`}
                 onClick={() => handleDateClick(cloneDay)}
               >
